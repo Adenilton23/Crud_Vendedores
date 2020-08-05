@@ -37,11 +37,11 @@ namespace SalesWebMvc2
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<SalesWebMvc2Context>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebMvc2Context")));
+                   options.UseMySql(Configuration.GetConnectionString("SalesWebMvc2Context"), builder =>
+            builder.MigrationsAssembly("SalesWebMvc2")));
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
