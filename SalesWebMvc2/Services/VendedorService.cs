@@ -21,7 +21,11 @@ namespace SalesWebMvc2.Services
         {   // retornar lista de todos vendedores
             return _context.Vendedor.ToList();
         }
-
+         public void Insert(Vendedor obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
 
 
     }
