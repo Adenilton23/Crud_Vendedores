@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace SalesWebMvc2.Services.Exceptions
 {
-    public class NotFoundExceptions : ApplicationException
+    public class NotFoundException : ApplicationException
     {
-        public NotFoundExceptions(string message) : base(message)
+        public NotFoundException(string message) : base(message)
         {
 
         }

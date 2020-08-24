@@ -44,7 +44,7 @@ namespace SalesWebMvc2.Services
         {
             if (!_context.Vendedor.Any(x => x.Id == obj.Id))
             {
-                throw new NotFoundExceptions("Id Not Found");
+                throw new NotFoundException("Id Not Found");
             }
             try
             {
