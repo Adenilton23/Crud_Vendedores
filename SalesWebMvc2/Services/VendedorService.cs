@@ -42,7 +42,7 @@ namespace SalesWebMvc2.Services
                 _context.Vendedor.Remove(obj);
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateException e)
+            catch (DbUpdateException)
             {
                 throw new IntegrityException("Impossivel Deletar Vendedor que possui vendas");
             }
